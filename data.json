@@ -9,12 +9,12 @@
       "pages": "3–6",
       "sheets": 4,
       "images": [
+        "assets/page_06.png",
         "assets/page_03.png",
         "assets/page_04.png",
-        "assets/page_05.png",
-        "assets/page_06.png"
+        "assets/page_05.png"
       ],
-      "thumb": "assets/thumbs/page_03.jpg"
+      "thumb": "assets/thumbs/page_06.jpg"
     },
     {
       "id": 2,
@@ -25,11 +25,11 @@
       "pages": "7–9",
       "sheets": 3,
       "images": [
+        "assets/page_09.png",
         "assets/page_07.png",
-        "assets/page_08.png",
-        "assets/page_09.png"
+        "assets/page_08.png"
       ],
-      "thumb": "assets/thumbs/page_07.jpg"
+      "thumb": "assets/thumbs/page_09.jpg"
     },
     {
       "id": 3,
@@ -40,11 +40,11 @@
       "pages": "10–12",
       "sheets": 3,
       "images": [
-        "assets/page_10.png",
+        "assets/page_12.png",
         "assets/page_11.png",
-        "assets/page_12.png"
+        "assets/page_10.png"
       ],
-      "thumb": "assets/thumbs/page_10.jpg"
+      "thumb": "assets/thumbs/page_12.jpg"
     },
     {
       "id": 4,
@@ -55,10 +55,10 @@
       "pages": "13–14",
       "sheets": 2,
       "images": [
-        "assets/page_13.png",
-        "assets/page_14.png"
+        "assets/page_14.png",
+        "assets/page_13.png"
       ],
-      "thumb": "assets/thumbs/page_13.jpg"
+      "thumb": "assets/thumbs/page_14.jpg"
     },
     {
       "id": 5,
@@ -69,11 +69,11 @@
       "pages": "15–17",
       "sheets": 3,
       "images": [
+        "assets/page_17.png",
         "assets/page_15.png",
-        "assets/page_16.png",
-        "assets/page_17.png"
+        "assets/page_16.png"
       ],
-      "thumb": "assets/thumbs/page_15.jpg"
+      "thumb": "assets/thumbs/page_17.jpg"
     },
     {
       "id": 6,
@@ -84,10 +84,10 @@
       "pages": "18–19",
       "sheets": 2,
       "images": [
-        "assets/page_18.png",
-        "assets/page_19.png"
+        "assets/page_19.png",
+        "assets/page_18.png"
       ],
-      "thumb": "assets/thumbs/page_18.jpg"
+      "thumb": "assets/thumbs/page_19.jpg"
     },
     {
       "id": 7,
@@ -98,12 +98,12 @@
       "pages": "20–23",
       "sheets": 4,
       "images": [
-        "assets/page_20.png",
-        "assets/page_21.png",
         "assets/page_22.png",
-        "assets/page_23.png"
+        "assets/page_23.png",
+        "assets/page_20.png",
+        "assets/page_21.png"
       ],
-      "thumb": "assets/thumbs/page_20.jpg"
+      "thumb": "assets/thumbs/page_22.jpg"
     },
     {
       "id": 8,
@@ -114,12 +114,12 @@
       "pages": "24–27",
       "sheets": 4,
       "images": [
-        "assets/page_24.png",
-        "assets/page_25.png",
         "assets/page_26.png",
-        "assets/page_27.png"
+        "assets/page_27.png",
+        "assets/page_24.png",
+        "assets/page_25.png"
       ],
-      "thumb": "assets/thumbs/page_24.jpg"
+      "thumb": "assets/thumbs/page_26.jpg"
     },
     {
       "id": 9,
@@ -130,11 +130,11 @@
       "pages": "28–30",
       "sheets": 3,
       "images": [
+        "assets/page_30.png",
         "assets/page_28.png",
-        "assets/page_29.png",
-        "assets/page_30.png"
+        "assets/page_29.png"
       ],
-      "thumb": "assets/thumbs/page_28.jpg"
+      "thumb": "assets/thumbs/page_30.jpg"
     },
     {
       "id": 10,
@@ -145,10 +145,10 @@
       "pages": "31–32",
       "sheets": 2,
       "images": [
-        "assets/page_31.png",
-        "assets/page_32.png"
+        "assets/page_32.png",
+        "assets/page_31.png"
       ],
-      "thumb": "assets/thumbs/page_31.jpg"
+      "thumb": "assets/thumbs/page_32.jpg"
     },
     {
       "id": 11,
@@ -159,11 +159,11 @@
       "pages": "33–35",
       "sheets": 3,
       "images": [
+        "assets/page_35.png",
         "assets/page_33.png",
-        "assets/page_34.png",
-        "assets/page_35.png"
+        "assets/page_34.png"
       ],
-      "thumb": "assets/thumbs/page_33.jpg"
+      "thumb": "assets/thumbs/page_35.jpg"
     },
     {
       "id": 12,
@@ -174,10 +174,10 @@
       "pages": "36–37",
       "sheets": 2,
       "images": [
-        "assets/page_36.png",
-        "assets/page_37.png"
+        "assets/page_37.png",
+        "assets/page_36.png"
       ],
-      "thumb": "assets/thumbs/page_36.jpg"
+      "thumb": "assets/thumbs/page_37.jpg"
     },
     {
       "id": 13,
@@ -188,14 +188,14 @@
       "pages": "38–43",
       "sheets": 6,
       "images": [
+        "assets/page_40.png",
         "assets/page_38.png",
         "assets/page_39.png",
-        "assets/page_40.png",
         "assets/page_41.png",
         "assets/page_42.png",
         "assets/page_43.png"
       ],
-      "thumb": "assets/thumbs/page_38.jpg"
+      "thumb": "assets/thumbs/page_40.jpg"
     },
     {
       "id": 14,
@@ -209,8 +209,8 @@
         "assets/page_44.png",
         "assets/page_45.png",
         "assets/page_46.png",
-        "assets/page_47.png",
-        "assets/page_48.png"
+        "assets/page_48.png",
+        "assets/page_47.png"
       ],
       "thumb": "assets/thumbs/page_44.jpg"
     },
@@ -224,8 +224,8 @@
       "sheets": 3,
       "images": [
         "assets/page_49.png",
-        "assets/page_50.png",
-        "assets/page_51.png"
+        "assets/page_51.png",
+        "assets/page_50.png"
       ],
       "thumb": "assets/thumbs/page_49.jpg"
     },
@@ -265,12 +265,12 @@
       "pages": "55–58",
       "sheets": 4,
       "images": [
-        "assets/page_55.png",
         "assets/page_56.png",
+        "assets/page_55.png",
         "assets/page_57.png",
         "assets/page_58.png"
       ],
-      "thumb": "assets/thumbs/page_55.jpg"
+      "thumb": "assets/thumbs/page_56.jpg"
     },
     {
       "id": 19,
@@ -296,11 +296,11 @@
       "pages": "62–64",
       "sheets": 3,
       "images": [
+        "assets/page_64.png",
         "assets/page_62.png",
-        "assets/page_63.png",
-        "assets/page_64.png"
+        "assets/page_63.png"
       ],
-      "thumb": "assets/thumbs/page_62.jpg"
+      "thumb": "assets/thumbs/page_64.jpg"
     },
     {
       "id": 21,
@@ -314,9 +314,9 @@
         "assets/page_65.png",
         "assets/page_66.png",
         "assets/page_67.png",
-        "assets/page_68.png",
         "assets/page_69.png",
-        "assets/page_70.png"
+        "assets/page_70.png",
+        "assets/page_68.png"
       ],
       "thumb": "assets/thumbs/page_65.jpg"
     },
@@ -347,14 +347,14 @@
       "pages": "77–82",
       "sheets": 6,
       "images": [
+        "assets/page_79.png",
+        "assets/page_82.png",
         "assets/page_77.png",
         "assets/page_78.png",
-        "assets/page_79.png",
         "assets/page_80.png",
-        "assets/page_81.png",
-        "assets/page_82.png"
+        "assets/page_81.png"
       ],
-      "thumb": "assets/thumbs/page_77.jpg"
+      "thumb": "assets/thumbs/page_79.jpg"
     },
     {
       "id": 24,
@@ -366,11 +366,11 @@
       "sheets": 6,
       "images": [
         "assets/page_83.png",
-        "assets/page_84.png",
-        "assets/page_85.png",
-        "assets/page_86.png",
         "assets/page_87.png",
-        "assets/page_88.png"
+        "assets/page_84.png",
+        "assets/page_86.png",
+        "assets/page_88.png",
+        "assets/page_85.png"
       ],
       "thumb": "assets/thumbs/page_83.jpg"
     },
@@ -383,11 +383,11 @@
       "pages": "89–91",
       "sheets": 3,
       "images": [
+        "assets/page_91.png",
         "assets/page_89.png",
-        "assets/page_90.png",
-        "assets/page_91.png"
+        "assets/page_90.png"
       ],
-      "thumb": "assets/thumbs/page_89.jpg"
+      "thumb": "assets/thumbs/page_91.jpg"
     },
     {
       "id": 26,
