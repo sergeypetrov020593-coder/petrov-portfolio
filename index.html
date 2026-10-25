@@ -171,7 +171,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
       <p class="lead">Проектирую изделия любой сложности по эскизу и техническому заданию: от 3D-модели до полного пакета чертежей по ГОСТ и ЕСКД и файлов для лазерной резки, гибки и трубореза.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#projects"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Смотреть проекты</a>
-        <a class="btn btn-ghost" href="portfolio-petrov.pdf" download><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg>Скачать PDF</a>
         <button class="btn btn-ghost" id="btn-print" type="button"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Печать Анкета</button>
         <button class="btn btn-ghost" id="btn-print-projects" type="button"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>Печать Проект</button>
       </div>
@@ -317,6 +316,49 @@ function printPage(){
   });
 }
 document.getElementById('btn-print').onclick=printPage;
+var PROJECTS_PRINT_CSS=`
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  body>*:not(#projects-wrap){display:none!important}
+  #projects-wrap{display:block!important}
+  header,.cta,.filters,.lb,.arrow,.menu,.badge,.sheets,.hero,.contact-sec,footer,
+  #about,#skills,#contact,.sec-head .kicker{display:none!important}
+  .grid-proj{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:14px!important}
+  .card{page-break-inside:avoid;border:1.5px solid #333!important;border-radius:6px!important;
+    background:#fff!important;box-shadow:none!important}
+  .thumb{border:1px solid #333!important;background:#fff!important}
+  .thumb img{background:#fff!important}
+  .card-body h3{color:#000!important;font-weight:800!important}
+  .meta .tag{color:#222!important;border:1px solid #999!important;background:#fff!important}
+  h2{color:#000!important;font-weight:800!important;display:block!important;margin-bottom:16px!important}
+  @media print{body>*:not(#projects-wrap){display:none!important}#projects-wrap{display:block!important}}
+`;
+function printProjects(){
+  var imgs=Array.from(document.querySelectorAll('#grid img'));
+  var pending=imgs.filter(function(i){return !i.complete});
+  function doPrint(){
+    var wrap=document.getElementById('projects');
+    wrap.setAttribute('id','projects-wrap');
+    var s=document.createElement('style');s.id='projects-print-override';s.textContent=PROJECTS_PRINT_CSS;
+    document.head.appendChild(s);
+    setTimeout(function(){
+      window.print();
+      setTimeout(function(){
+        var el=document.getElementById('projects-print-override');if(el)el.remove();
+        var w=document.getElementById('projects-wrap');if(w)w.setAttribute('id','projects');
+      },500);
+    },100);
+  }
+  if(!pending.length){doPrint();return;}
+  var rem=pending.length,fired=false;
+  var go=function(){if(fired)return;fired=true;doPrint();};
+  var guard=setTimeout(go,8000);
+  var fin=function(){if(--rem<=0){clearTimeout(guard);go();}};
+  pending.forEach(function(i){
+    i.addEventListener('load',fin);i.addEventListener('error',fin);
+    i.loading='eager';var src=i.getAttribute('src');i.removeAttribute('src');i.src=src;
+  });
+}
+document.getElementById('btn-print-projects').onclick=printProjects;
 // Возраст считается автоматически от даты рождения 02.05.1993
 (function(){
   var birth=new Date(1993,4,2), now=new Date();
