@@ -115,41 +115,32 @@ section{padding:66px 0}
 .cbox a.val:hover{color:var(--accent2)}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13.5px;text-align:center}
 @media print{
+  /* Переопределяем CSS-переменные — это перекрашивает ВСЁ одним правилом */
+  :root{
+    --bg:#fff!important;--bg2:#fff!important;
+    --panel:#fff!important;--panel2:#fff!important;
+    --ink:#000!important;--muted:#222!important;--line:#333!important;
+    --accent:#000!important;--accent2:#000!important;
+    --ok:#000!important;--shadow:none!important;
+    --grid:transparent!important;
+  }
   header,.cta,.filters,.lb,.arrow,.menu,.badge,.sheets{display:none!important}
   *{box-shadow:none!important;text-shadow:none!important}
-
-  /* Глобальный сброс: белый фон */
   body,html{background:#fff!important;color:#000!important}
-
-  /* ВСЕ текстовые элементы → чёрный */
-  h1,h2,h3,h4,p,span,a,b,strong,li,label,small,figcaption,
-  .lead,.kicker,.role,.brand,.stat b,.stat span,
-  .skill h4,.skill p,.skill .n,
-  .cbox .lbl,.cbox .val,
-  .card-body h3,.meta .tag,.tag,.tag.code,
-  .avatar-card h3,.avatar-card p,
-  .chip,.fbtn,.btn,.btn-primary,.btn-ghost,
-  .contact-list a,.contact-list span,
-  footer,footer div{
-    color:#000!important}
-
-  /* Все фоны → белые */
-  .hero,.hero-in,section,.wrap,.sec-head,.contact-sec,footer,
-  .stat,.skill,.cbox,.avatar-card,.card,.card-body,
-  .chip,.fbtn,.tag,.thumb,.tools,.grid-skills,.grid-proj,
-  .contact-grid,.meta,.btn,.btn-primary,.btn-ghost,
-  [class*="panel"]{
-    background:#fff!important;border-color:#333!important}
 
   /* Рамки для разделения блоков */
   .stat,.skill,.cbox,.card,.avatar-card{
-    border:1.5px solid #333!important;border-radius:6px!important}
+    border:1.5px solid #333!important;border-radius:6px!important;background:#fff!important}
   .thumb{border:1px solid #333!important;background:#fff!important}
   .thumb img{background:#fff!important}
   .avatar{border:2px solid #333!important;background:#fff!important}
   .avatar img{background:#fff!important}
   .chip,.fbtn,.btn,.btn-primary,.btn-ghost{
     border:1px solid #333!important;background:#fff!important;color:#000!important}
+
+  /* SVG иконки → чёрные */
+  svg{stroke:#000!important;fill:none!important}
+  .skill h4 svg{color:#000!important;stroke:#000!important}
 
   /* Сетка и отступы */
   section{padding:12px 0;page-break-inside:avoid}
