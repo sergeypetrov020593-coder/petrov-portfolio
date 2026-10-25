@@ -194,7 +194,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <div class="stats">
     <div class="stat"><b>8+</b><span>лет опыта</span></div>
     <div class="stat"><b id="st-proj">26</b><span>проектов в портфолио</span></div>
-    <div class="stat"><b id="st-sheets">90</b><span>листов чертежей</span></div>
+    <div class="stat"><b id="st-sheets">92</b><span id="st-sheets-lbl">страницы в портфолио</span></div>
     <div class="stat"><b>3</b><span>CAD-системы</span></div>
   </div>
 </div>
@@ -263,7 +263,7 @@ const CATS = [
 const $ = s=>document.querySelector(s);
 $("#yr").textContent = new Date().getFullYear();
 $("#st-proj").textContent = DATA.projects.length;
-$("#st-sheets").textContent = DATA.projects.reduce((a,p)=>a+p.sheets,0);
+(function(){var n=DATA.projects.reduce(function(a,p){return a+p.images.length;},0)+2;var m10=n%10,m100=n%100;var w=(m10===1&&m100!==11)?"страница":((m10>=2&&m10<=4&&(m100<12||m100>14))?"страницы":"страниц");$("#st-sheets").textContent=n;$("#st-sheets-lbl").textContent=w+" в портфолио";})();
 $("#skills-grid").innerHTML = DATA.skills.map((s,i)=>`
   <div class="skill"><span class="n">${String(i+1).padStart(2,"0")}</span>
     <h4><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>${s[0]}</h4>
