@@ -115,42 +115,42 @@ section{padding:66px 0}
 .cbox a.val:hover{color:var(--accent2)}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13.5px;text-align:center}
 @media print{
-  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important}
-  header,.cta,.filters,.lb,.arrow,.menu,.badge,.sheets,.eyebrow{display:none!important}
-  body{background:#fff!important;color:#000!important}
+  header,.cta,.filters,.lb,.arrow,.menu,.badge,.sheets{display:none!important}
+  *{box-shadow:none!important;text-shadow:none!important}
 
-  /* Тёмные панели → белый текст */
-  .panel,.skill,.stat,.cbox,.avatar-card,.chip,.fbtn,
-  [class*="panel"]{background:#1a1a1a!important;color:#fff!important}
-  .skill p,.stat span,.cbox .lbl,.cbox .val,.chip,.fbtn,
-  .skill h4,.skill h4 svg{color:#fff!important}
-  .skill .n{color:rgba(255,255,255,.15)!important}
-
-  /* Светлые фоны → чёрный текст */
+  /* Единая схема: белый фон + чёрный текст везде */
+  body,html{background:#fff!important;color:#000!important}
   .hero,.hero-in,section,.wrap,.sec-head,.contact-sec,footer,
-  .card-body,.meta,.tag,.tag.code{background:#fff!important;color:#000!important}
-  h1,h2,h3,h4,p,span,a,.lead,.kicker,.card-body h3,.meta .tag{
-    color:#000!important}
-  .sec-head .kicker,.role{color:#333!important}
+  .stat,.skill,.cbox,.avatar-card,.card,.card-body,.chip,.fbtn,.tag,
+  .thumb,.tools,.grid-skills,.grid-proj,.contact-grid,.meta,
+  [class*="panel"],h1,h2,h3,h4,p,span,a,b,strong,li,div{
+    background:#fff!important;color:#000!important;
+    border-color:#000!important}
 
-  /* Чертежи и миниатюры — светлый фон, чёрная рамка */
-  .thumb{background:#fff!important;border:1px solid #000!important}
+  /* Жирный текст для заголовков и акцентов */
+  h1,h2,h3,h4,.stat b,.skill h4,.cbox .val,.card-body h3,
+  .kicker,.role,.brand{font-weight:800!important;color:#000!important}
+  .skill p,.stat span,.cbox .lbl,.lead,.tag,.meta .tag,
+  .avatar-card p,.avatar-card h3{color:#222!important}
+
+  /* Рамки для визуального разделения блоков */
+  .stat,.skill,.cbox,.card,.avatar-card{border:1.5px solid #000!important;border-radius:6px!important}
+  .thumb{border:1px solid #000!important;background:#fff!important}
   .thumb img{background:#fff!important}
-  .card{border:1px solid #000!important;box-shadow:none!important;background:#fff!important}
-  .avatar{box-shadow:none!important;border:2px solid #000!important}
+  .avatar{border:2px solid #000!important;background:#fff!important}
   .avatar img{background:#fff!important}
-
-  /* Убираем градиенты и цветные акценты */
-  .btn,.btn-primary,.btn-ghost{background:#fff!important;color:#000!important;
-    border:1px solid #000!important;box-shadow:none!important}
-  .stat b{color:#000!important}
-  .tools .chip{background:#fff!important;color:#000!important;border:1px solid #000!important}
+  .chip,.fbtn,.btn,.btn-primary,.btn-ghost{
+    border:1px solid #000!important;background:#fff!important;color:#000!important}
 
   /* Сетка и отступы */
-  section{padding:14px 0;page-break-inside:avoid}
-  .grid-proj{grid-template-columns:repeat(3,1fr)}
+  section{padding:12px 0;page-break-inside:avoid}
+  .grid-proj{grid-template-columns:repeat(3,1fr);gap:12px}
+  .grid-skills{gap:10px}
+  .contact-grid{gap:10px}
+  .stats{gap:10px;margin-top:-20px}
   .card{page-break-inside:avoid}
-  .hero-in{padding-top:20px!important;padding-bottom:20px!important}
+  .hero-in{padding-top:16px!important;padding-bottom:16px!important;gap:24px}
+  .sec-head{margin-bottom:16px}
 }
 </style>
 </head>
