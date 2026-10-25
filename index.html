@@ -319,46 +319,75 @@ function printPage(){
   });
 }
 document.getElementById('btn-print').onclick=printPage;
-var PROJECTS_PRINT_CSS=`
-  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-  body>*:not(#projects-wrap){display:none!important}
-  #projects-wrap{display:block!important}
-  header,.cta,.filters,.lb,.arrow,.menu,.badge,.sheets,.hero,.contact-sec,footer,
-  #about,#skills,#contact,.sec-head .kicker{display:none!important}
-  .grid-proj{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:14px!important}
-  .card{page-break-inside:avoid;border:1.5px solid #333!important;border-radius:6px!important;
-    background:#fff!important;box-shadow:none!important}
-  .thumb{border:1px solid #333!important;background:#fff!important}
-  .thumb img{background:#fff!important}
-  .card-body h3{color:#000!important;font-weight:800!important}
-  .meta .tag{color:#222!important;border:1px solid #999!important;background:#fff!important}
-  h2{color:#000!important;font-weight:800!important;display:block!important;margin-bottom:16px!important}
-  @media print{body>*:not(#projects-wrap){display:none!important}#projects-wrap{display:block!important}}
-`;
+// Печать - Проекты: титульный лист + содержание с номерами страниц + все листы проектов по порядку
+function pbEsc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+var BOOK_CSS=`
+#print-book{display:none}
+@media print{
+  @page{size:A4 portrait;margin:10mm}
+  @page land{size:A4 landscape;margin:10mm}
+  body>*:not(#print-book){display:none!important}
+  #print-book{display:block!important;background:#fff!important;color:#000!important;font-family:Arial,"Segoe UI",sans-serif}
+  #print-book *{color:#000!important;background:transparent!important;box-shadow:none!important;text-shadow:none!important}
+  .pb-page{break-after:page;page-break-after:always;height:272mm;display:flex;flex-direction:column;overflow:hidden;box-sizing:border-box}
+  .pb-page.land{page:land;height:185mm}
+  .pb-page:last-child{break-after:auto;page-break-after:auto}
+  .pb-title{justify-content:center;align-items:center;text-align:center;border:2px solid #000;padding:20mm}
+  .pb-title .t1{font-size:34pt;font-weight:800;letter-spacing:2px}
+  .pb-title .t2{font-size:20pt;font-weight:700;margin-top:6mm}
+  .pb-title .t3{font-size:13pt;margin-top:3mm}
+  .pb-title img{width:42mm;height:42mm;border-radius:50%;object-fit:cover;object-position:center 20%;border:1.5px solid #000;margin:12mm auto 0;display:block}
+  .pb-title .t4{font-size:11pt;margin-top:10mm;line-height:1.7}
+  .pb-title .t5{font-size:10pt;margin-top:12mm}
+  .pb-toc-h{font-size:20pt;font-weight:800;border-bottom:2px solid #000;padding-bottom:3mm;margin-bottom:5mm}
+  .pb-row{display:flex;align-items:baseline;font-size:10.5pt;line-height:1.35;padding:1.1mm 0;break-inside:avoid}
+  .pb-row .n{flex:0 0 9mm;font-weight:700}
+  .pb-row .nm{flex:0 1 auto}
+  .pb-row .dots{flex:1 1 auto;min-width:8mm;border-bottom:1px dotted #000;margin:0 2mm}
+  .pb-row .pg{flex:0 0 18mm;text-align:right;font-weight:700}
+  .pb-row .rg{font-size:8.5pt;color:#444!important;margin-left:2mm;white-space:nowrap}
+  .pb-head{display:flex;justify-content:space-between;gap:6mm;font-size:9.5pt;font-weight:700;border-bottom:1px solid #000;padding-bottom:1.5mm;margin-bottom:2mm}
+  .pb-img{flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center}
+  .pb-img img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+  .pb-foot{display:flex;justify-content:space-between;font-size:8.5pt;border-top:1px solid #000;padding-top:1.5mm;margin-top:2mm}
+}`;
+function buildBook(){
+  var old=document.getElementById('print-book');if(old)old.remove();
+  if(!document.getElementById('book-css')){var st=document.createElement('style');st.id='book-css';st.textContent=BOOK_CSS;document.head.appendChild(st);}
+  var total=0;DATA.projects.forEach(function(p){total+=p.images.length;});
+  var all=total+2, pg=3, rows='', sheets='';
+  var foot=function(n){return '<div class="pb-foot"><span>Петров С.А. · Инженер-конструктор · Портфолио</span><span>стр. '+n+' из '+all+'</span></div>';};
+  DATA.projects.forEach(function(p,i){
+    var start=pg, end=pg+p.images.length-1;
+    rows+='<div class="pb-row"><span class="n">'+(i+1)+'.</span><span class="nm">'+pbEsc(p.name)+(p.code?'<span class="rg">'+pbEsc(p.code)+'</span>':'')+'</span><span class="dots"></span><span class="pg">'+(start===end?start:start+'–'+end)+'</span></div>';
+    p.images.forEach(function(src,k){
+      sheets+='<div class="pb-page pb-sheet"><div class="pb-head"><span>'+(i+1)+'. '+pbEsc(p.name)+'</span><span>Лист '+(k+1)+' из '+p.images.length+'</span></div><div class="pb-img"><img src="'+src+'" alt=""></div>'+foot(pg)+'</div>';
+      pg++;
+    });
+  });
+  var title='<div class="pb-page pb-title"><div class="t1">ПОРТФОЛИО</div><div class="t2">Петров Сергей Алексеевич</div><div class="t3">Инженер-конструктор</div><img src="assets/photo.jpg" alt=""><div class="t4">Тел.: 8 (906) 081-37-99<br>Email: sergeypetrov0205@mail.ru<br>VK: vk.com/sergeypetrov0205</div><div class="t5">'+DATA.projects.length+' проектов · '+total+' листов чертежей · '+new Date().getFullYear()+'</div></div>';
+  var toc='<div class="pb-page pb-toc"><div class="pb-toc-h">Содержание</div>'+rows+'<div style="margin-top:auto">'+foot(2)+'</div></div>';
+  var book=document.createElement('div');book.id='print-book';book.innerHTML=title+toc+sheets;
+  document.body.appendChild(book);
+  var imgs=Array.from(book.querySelectorAll('.pb-sheet img'));
+  return new Promise(function(res){
+    var rem=imgs.length, fired=false;
+    var fin=function(){if(fired)return;fired=true;res();};
+    var g=setTimeout(fin,30000);
+    var done=function(){if(--rem<=0){clearTimeout(g);fin();}};
+    if(!rem){fin();return;}
+    imgs.forEach(function(im){
+      var mark=function(){if(im.naturalWidth>im.naturalHeight)im.closest('.pb-page').classList.add('land');done();};
+      if(im.complete&&im.naturalWidth){mark();}else{im.addEventListener('load',mark);im.addEventListener('error',done);}
+    });
+  });
+}
 function printProjects(){
-  var imgs=Array.from(document.querySelectorAll('#grid img'));
-  var pending=imgs.filter(function(i){return !i.complete});
-  function doPrint(){
-    var wrap=document.getElementById('projects');
-    wrap.setAttribute('id','projects-wrap');
-    var s=document.createElement('style');s.id='projects-print-override';s.textContent=PROJECTS_PRINT_CSS;
-    document.head.appendChild(s);
+  buildBook().then(function(){
     setTimeout(function(){
       window.print();
-      setTimeout(function(){
-        var el=document.getElementById('projects-print-override');if(el)el.remove();
-        var w=document.getElementById('projects-wrap');if(w)w.setAttribute('id','projects');
-      },500);
-    },100);
-  }
-  if(!pending.length){doPrint();return;}
-  var rem=pending.length,fired=false;
-  var go=function(){if(fired)return;fired=true;doPrint();};
-  var guard=setTimeout(go,8000);
-  var fin=function(){if(--rem<=0){clearTimeout(guard);go();}};
-  pending.forEach(function(i){
-    i.addEventListener('load',fin);i.addEventListener('error',fin);
-    i.loading='eager';var src=i.getAttribute('src');i.removeAttribute('src');i.src=src;
+      setTimeout(function(){var b=document.getElementById('print-book');if(b)b.remove();},500);
+    },150);
   });
 }
 document.getElementById('btn-print-projects').onclick=printProjects;
