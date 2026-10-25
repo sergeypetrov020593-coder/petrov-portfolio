@@ -338,7 +338,7 @@ var BOOK_CSS=`
   .pb-title .t3{font-size:13pt;margin-top:3mm}
   .pb-title img{width:42mm;height:42mm;border-radius:50%;object-fit:cover;object-position:center 20%;border:1.5px solid #000;margin:12mm auto 0;display:block}
   .pb-title .t4{font-size:11pt;margin-top:10mm;line-height:1.7}
-  .pb-title .t5{font-size:10pt;margin-top:12mm}
+  .pb-title .t5{font-size:10pt;margin-top:auto;padding-top:10mm;align-self:center}
   .pb-toc-h{font-size:20pt;font-weight:800;border-bottom:2px solid #000;padding-bottom:3mm;margin-bottom:5mm}
   .pb-row{display:flex;align-items:baseline;font-size:10.5pt;line-height:1.35;padding:1.1mm 0;break-inside:avoid}
   .pb-row .n{flex:0 0 9mm;font-weight:700}
@@ -365,7 +365,7 @@ function buildBook(){
       pg++;
     });
   });
-  var title='<div class="pb-page pb-title"><div class="t1">ПОРТФОЛИО</div><div class="t2">Петров Сергей Алексеевич</div><div class="t3">Инженер-конструктор</div><img src="assets/photo.jpg" alt=""><div class="t4">Тел.: 8 (906) 081-37-99<br>Email: sergeypetrov0205@mail.ru<br>VK: vk.com/sergeypetrov0205</div><div class="t5">'+DATA.projects.length+' проектов · '+total+' листов чертежей · '+new Date().getFullYear()+'</div></div>';
+  var title='<div class="pb-page pb-title"><div class="t1">ПОРТФОЛИО</div><div class="t2">Петров Сергей Алексеевич</div><div class="t3">Инженер-конструктор</div><img src="assets/photo.jpg" alt=""><div class="t4">Тел.: 8 (906) 081-37-99<br>Email: sergeypetrov0205@mail.ru<br>VK: vk.com/sergeypetrov0205</div><div class="t5">© 2026 Петров Сергей Алексеевич · Инженер-конструктор · Портфолио</div></div>';
   var toc='<div class="pb-page pb-toc"><div class="pb-toc-h">Содержание</div>'+rows+'<div style="margin-top:auto">'+foot(2)+'</div></div>';
   var book=document.createElement('div');book.id='print-book';book.innerHTML=title+toc+sheets;
   document.body.appendChild(book);
