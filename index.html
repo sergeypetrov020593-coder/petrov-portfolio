@@ -36,7 +36,7 @@ h1{font-size:clamp(30px,5vw,50px);line-height:1.08;margin:18px 0 6px;letter-spac
 h1 .role{display:block;font-size:clamp(17px,2.4vw,23px);font-weight:600;color:var(--accent2);margin-top:10px;letter-spacing:.2px}
 .lead{color:var(--muted);font-size:16.5px;max-width:640px;margin-top:16px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:11px;font-weight:600;font-size:14.5px;border:1px solid var(--line);transition:.2s;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:11px;font-weight:600;font-size:14.5px;border:1px solid var(--line);transition:.2s;cursor:pointer;font-family:inherit}
 .btn-primary{background:linear-gradient(135deg,var(--accent),#2d6cdf);color:#04101f;border-color:transparent;box-shadow:0 8px 22px rgba(45,108,223,.35)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(45,108,223,.45)}
 .btn-ghost{background:var(--panel);color:var(--ink)}
@@ -142,7 +142,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
       <div class="cta">
         <a class="btn btn-primary" href="#projects"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Смотреть проекты</a>
         <a class="btn btn-ghost" href="portfolio-petrov.pdf" download><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg>Скачать PDF</a>
-        <a class="btn btn-ghost" href="#contact"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg>Связаться</a>
+        <button class="btn btn-ghost" id="btn-print" type="button"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Печать</button>
       </div>
     </div>
     <div class="avatar-card">
@@ -269,6 +269,23 @@ function nav(d){if(!cur)return;idx=(idx+d+cur.images.length)%cur.images.length;s
 $("#lb-close").onclick=closeLB;$("#lb-prev").onclick=()=>nav(-1);$("#lb-next").onclick=()=>nav(1);$("#lb-prev2").onclick=()=>nav(-1);$("#lb-next2").onclick=()=>nav(1);
 $("#lb").onclick=e=>{if(e.target.id==="lb")closeLB();};
 document.addEventListener("keydown",e=>{if(!$("#lb").classList.contains("open"))return;if(e.key==="Escape")closeLB();if(e.key==="ArrowLeft")nav(-1);if(e.key==="ArrowRight")nav(1);});
+// Печать: сначала догружаем все миниатюры сетки, затем открываем диалог печати
+function printPage(){
+  const imgs=Array.from(document.querySelectorAll('#grid img'));
+  const pendingImgs=imgs.filter(i=>!i.complete);
+  if(!pendingImgs.length){ window.print(); return; }
+  let remaining=pendingImgs.length, fired=false;
+  const go=()=>{ if(fired)return; fired=true; window.print(); };
+  const guard=setTimeout(go,8000);
+  const finish=()=>{ if(--remaining<=0){ clearTimeout(guard); go(); } };
+  pendingImgs.forEach(i=>{
+    i.addEventListener('load',finish);
+    i.addEventListener('error',finish);
+    i.loading='eager';
+    const s=i.getAttribute('src'); i.removeAttribute('src'); i.src=s;
+  });
+}
+document.getElementById('btn-print').onclick=printPage;
 renderFilters(); renderGrid();
 </script>
 </body>
