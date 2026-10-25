@@ -115,13 +115,42 @@ section{padding:66px 0}
 .cbox a.val:hover{color:var(--accent2)}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13.5px;text-align:center}
 @media print{
-  header,.cta,.filters,.lb,.arrow,.menu{display:none!important}
-  body{background:#fff;color:#000}
-  .hero,.hero-in,.stat,.skill,.card,.cbox,.avatar-card{box-shadow:none}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important}
+  header,.cta,.filters,.lb,.arrow,.menu,.badge,.sheets,.eyebrow{display:none!important}
+  body{background:#fff!important;color:#000!important}
+
+  /* Тёмные панели → белый текст */
+  .panel,.skill,.stat,.cbox,.avatar-card,.chip,.fbtn,
+  [class*="panel"]{background:#1a1a1a!important;color:#fff!important}
+  .skill p,.stat span,.cbox .lbl,.cbox .val,.chip,.fbtn,
+  .skill h4,.skill h4 svg{color:#fff!important}
+  .skill .n{color:rgba(255,255,255,.15)!important}
+
+  /* Светлые фоны → чёрный текст */
+  .hero,.hero-in,section,.wrap,.sec-head,.contact-sec,footer,
+  .card-body,.meta,.tag,.tag.code{background:#fff!important;color:#000!important}
+  h1,h2,h3,h4,p,span,a,.lead,.kicker,.card-body h3,.meta .tag{
+    color:#000!important}
+  .sec-head .kicker,.role{color:#333!important}
+
+  /* Чертежи и миниатюры — светлый фон, чёрная рамка */
+  .thumb{background:#fff!important;border:1px solid #000!important}
+  .thumb img{background:#fff!important}
+  .card{border:1px solid #000!important;box-shadow:none!important;background:#fff!important}
+  .avatar{box-shadow:none!important;border:2px solid #000!important}
+  .avatar img{background:#fff!important}
+
+  /* Убираем градиенты и цветные акценты */
+  .btn,.btn-primary,.btn-ghost{background:#fff!important;color:#000!important;
+    border:1px solid #000!important;box-shadow:none!important}
+  .stat b{color:#000!important}
+  .tools .chip{background:#fff!important;color:#000!important;border:1px solid #000!important}
+
+  /* Сетка и отступы */
   section{padding:14px 0;page-break-inside:avoid}
   .grid-proj{grid-template-columns:repeat(3,1fr)}
-  .card{page-break-inside:avoid;border-color:#ccc}
-  .thumb{background:#fff}
+  .card{page-break-inside:avoid}
+  .hero-in{padding-top:20px!important;padding-bottom:20px!important}
 }
 </style>
 </head>
