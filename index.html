@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Портфолио — Петров Сергей Алексеевич | Инженер-конструктор</title>
+<meta name="description" content="Профессиональное портфолио инженера-конструктора Петрова Сергея Алексеевича: 26 проектов, чертежи по ГОСТ и ЕСКД, 3D-моделирование в КОМПАС-3D, SolidWorks, AutoCAD.">
+<style>
+:root{
+  --bg:#0d1117; --bg2:#111722; --panel:#161d29; --panel2:#1b2432;
+  --ink:#e8edf5; --muted:#93a1b5; --line:#26313f;
+  --accent:#4ea1ff; --accent2:#7cc4ff; --grid:rgba(78,161,255,.08);
+  --ok:#38d39f; --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.3px}
+.mono{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#2d6cdf);color:#04101f;font-weight:800;font-size:15px;box-shadow:0 4px 14px rgba(78,161,255,.35)}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.6px;text-transform:uppercase}
+.menu{display:flex;gap:26px;font-size:14.5px;color:var(--muted)}
+.menu a{transition:color .2s}.menu a:hover{color:var(--ink)}
+@media(max-width:820px){.menu{display:none}}
+.hero{position:relative;overflow:hidden;background:radial-gradient(1000px 500px at 80% -10%,rgba(78,161,255,.16),transparent 60%),linear-gradient(180deg,var(--bg2),var(--bg));border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(700px 400px at 30% 20%,#000,transparent 75%)}
+.hero-in{position:relative;display:grid;grid-template-columns:1.35fr .65fr;gap:40px;align-items:center;padding:70px 0 64px}
+@media(max-width:860px){.hero-in{grid-template-columns:1fr;padding:48px 0;gap:28px}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent2);border:1px solid var(--line);background:var(--panel);padding:6px 12px;border-radius:999px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(56,211,159,.15)}
+h1{font-size:clamp(30px,5vw,50px);line-height:1.08;margin:18px 0 6px;letter-spacing:-.5px}
+h1 .role{display:block;font-size:clamp(17px,2.4vw,23px);font-weight:600;color:var(--accent2);margin-top:10px;letter-spacing:.2px}
+.lead{color:var(--muted);font-size:16.5px;max-width:640px;margin-top:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:11px;font-weight:600;font-size:14.5px;border:1px solid var(--line);transition:.2s;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#2d6cdf);color:#04101f;border-color:transparent;box-shadow:0 8px 22px rgba(45,108,223,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(45,108,223,.45)}
+.btn-ghost{background:var(--panel);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent2)}
+.avatar-card{justify-self:center;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow);width:100%;max-width:300px}
+.avatar{width:120px;height:120px;border-radius:50%;margin:6px auto 14px;display:grid;place-items:center;font-size:42px;font-weight:800;color:#04101f;background:conic-gradient(from 200deg,var(--accent),#2d6cdf,var(--accent2),var(--accent));box-shadow:0 10px 30px rgba(78,161,255,.3)}
+.avatar-card h3{text-align:center;font-size:18px}
+.avatar-card p{text-align:center;color:var(--muted);font-size:13.5px;margin-top:4px}
+.contact-list{margin-top:16px;display:grid;gap:9px;font-size:13.5px}
+.contact-list a,.contact-list span{display:flex;align-items:center;gap:9px;color:var(--muted);padding:8px 10px;border-radius:9px;background:var(--bg2);border:1px solid var(--line)}
+.contact-list a:hover{color:var(--accent2);border-color:var(--accent)}
+.ico{width:16px;flex:0 0 16px;opacity:.9}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:-34px auto 0;position:relative;z-index:5}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:30px;color:var(--accent2);font-weight:800;letter-spacing:-.5px}
+.stat span{color:var(--muted);font-size:13px}
+section{padding:66px 0}
+.sec-head{margin-bottom:34px}
+.sec-head .kicker{color:var(--accent2);font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700}
+.sec-head h2{font-size:clamp(24px,3.4vw,34px);margin-top:8px;letter-spacing:-.4px}
+.sec-head p{color:var(--muted);margin-top:10px;max-width:720px}
+.grid-skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.skill{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:var(--radius);padding:22px;position:relative;overflow:hidden;transition:.25s}
+.skill:hover{transform:translateY(-3px);border-color:var(--accent)}
+.skill .n{position:absolute;right:14px;top:8px;font-size:44px;font-weight:800;color:rgba(124,196,255,.07)}
+.skill h4{font-size:16.5px;margin-bottom:8px;display:flex;gap:10px;align-items:center}
+.skill h4 svg{color:var(--accent)}
+.skill p{color:var(--muted);font-size:14px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{border:1px solid var(--line);background:var(--panel);padding:8px 14px;border-radius:999px;font-size:13.5px;color:var(--accent2);font-weight:600}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.fbtn{border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:9px 16px;border-radius:999px;font-size:13.5px;font-weight:600;cursor:pointer;transition:.2s}
+.fbtn:hover{color:var(--ink);border-color:var(--accent)}
+.fbtn.active{background:linear-gradient(135deg,var(--accent),#2d6cdf);color:#04101f;border-color:transparent}
+.fbtn .cnt{opacity:.7;font-weight:500;margin-left:6px}
+.grid-proj{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:.25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:var(--shadow)}
+.thumb{position:relative;aspect-ratio:4/3;background:#fff;overflow:hidden;display:grid;place-items:center}
+.thumb img{width:100%;height:100%;object-fit:contain;background:#fff;transition:.35s}
+.card:hover .thumb img{transform:scale(1.04)}
+.badge{position:absolute;top:10px;left:10px;background:rgba(13,17,23,.85);color:var(--accent2);border:1px solid var(--line);font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:7px;backdrop-filter:blur(4px)}
+.sheets{position:absolute;bottom:10px;right:10px;background:rgba(13,17,23,.85);color:#fff;font-size:11.5px;padding:4px 9px;border-radius:7px;display:flex;align-items:center;gap:5px}
+.card-body{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column;gap:7px}
+.card-body h3{font-size:16px;line-height:1.35}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+.tag{font-size:11.5px;color:var(--muted);border:1px solid var(--line);background:var(--bg2);padding:3px 9px;border-radius:6px}
+.tag.code{color:var(--accent2);font-family:"Consolas","Courier New",monospace}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(6,9,14,.94);display:none;align-items:center;justify-content:center;flex-direction:column;backdrop-filter:blur(6px)}
+.lb.open{display:flex}
+.lb-top{position:absolute;top:0;left:0;right:0;padding:18px 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;color:#fff}
+.lb-title h3{font-size:18px}
+.lb-title p{color:var(--accent2);font-size:13px;margin-top:3px;font-family:monospace}
+.lb-close{background:var(--panel);border:1px solid var(--line);color:#fff;width:42px;height:42px;border-radius:10px;font-size:22px;cursor:pointer;flex:0 0 auto;line-height:1}
+.lb-close:hover{border-color:var(--accent);color:var(--accent2)}
+.lb-stage{max-width:92vw;max-height:76vh;display:grid;place-items:center;padding:70px 0 60px}
+.lb-stage img{max-width:92vw;max-height:76vh;object-fit:contain;background:#fff;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lb-nav{position:absolute;bottom:24px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:20px}
+.lb-nav button{background:var(--panel);border:1px solid var(--line);color:#fff;width:46px;height:46px;border-radius:50%;font-size:20px;cursor:pointer}
+.lb-nav button:hover{border-color:var(--accent);color:var(--accent2)}
+.lb-count{color:var(--muted);font-size:14px;min-width:70px;text-align:center;font-family:monospace}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);background:var(--panel);border:1px solid var(--line);color:#fff;width:52px;height:52px;border-radius:50%;font-size:24px;cursor:pointer;z-index:2}
+.arrow:hover{border-color:var(--accent);color:var(--accent2)}
+.arrow.prev{left:20px}.arrow.next{right:20px}
+@media(max-width:700px){.arrow{display:none}}
+.contact-sec{background:linear-gradient(180deg,var(--bg),var(--bg2));border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:1024px){.contact-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.contact-grid{grid-template-columns:1fr}}
+.cbox{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:.2s}
+.cbox:hover{border-color:var(--accent)}
+.cbox .lbl{color:var(--muted);font-size:12.5px;text-transform:uppercase;letter-spacing:1px}
+.cbox .val{font-size:17px;font-weight:600;margin-top:8px;word-break:break-word}
+.cbox a.val:hover{color:var(--accent2)}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13.5px;text-align:center}
+@media print{
+  header,.cta,.filters,.lb,.arrow,.menu{display:none!important}
+  body{background:#fff;color:#000}
+  .hero,.hero-in,.stat,.skill,.card,.cbox,.avatar-card{box-shadow:none}
+  section{padding:14px 0;page-break-inside:avoid}
+  .grid-proj{grid-template-columns:repeat(3,1fr)}
+  .card{page-break-inside:avoid;border-color:#ccc}
+  .thumb{background:#fff}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand"><div class="mono">СП</div><div>Сергей Петров<small>Инженер-конструктор</small></div></div>
+    <nav class="menu">
+      <a href="#about">О специалисте</a><a href="#skills">Компетенции</a><a href="#projects">Проекты</a><a href="#contact">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> Открыт к проектной работе</span>
+      <h1>Петров Сергей Алексеевич<span class="role">Инженер-конструктор · стаж более 8 лет</span></h1>
+      <p class="lead">Проектирую изделия любой сложности по эскизу и техническому заданию: от 3D-модели до полного пакета чертежей по ГОСТ и ЕСКД и файлов для лазерной резки, гибки и трубореза.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#projects"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Смотреть проекты</a>
+        <a class="btn btn-ghost" href="portfolio-petrov.pdf" download><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg>Скачать PDF</a>
+        <a class="btn btn-ghost" href="#contact"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg>Связаться</a>
+      </div>
+    </div>
+    <div class="avatar-card">
+      <div class="avatar">СП</div>
+      <h3>Сергей Петров</h3><p>Инженер-конструктор</p>
+      <div class="contact-list">
+        <a href="tel:+79060813799"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> 8 (906) 081-37-99</a>
+        <a href="mailto:sergeypetrov0205@mail.ru"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg> sergeypetrov0205@mail.ru</a>
+        <a href="https://vk.com/sergeypetrov0205" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 17c-5 0-8-3.4-8.1-9h2.5c.1 4.1 1.9 5.8 3.3 6.2V8h2.4v3.7c1.4-.2 2.8-1.8 3.3-3.7h2.3c-.4 2.2-1.9 3.9-3 4.6 1.1.6 2.8 2.1 3.4 4.4h-2.6c-.5-1.7-1.8-3-3.7-3.2V17z"/></svg> vk.com/sergeypetrov0205</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>8+</b><span>лет опыта</span></div>
+    <div class="stat"><b id="st-proj">26</b><span>проектов в портфолио</span></div>
+    <div class="stat"><b id="st-sheets">90</b><span>листов чертежей</span></div>
+    <div class="stat"><b>3</b><span>CAD-системы</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">О специалисте</span><h2>Конструкторская подготовка полного цикла</h2>
+      <p>Выполняю различные проектные работы по эскизу и техническому заданию (ТЗ). Беру на себя весь путь изделия — от идеи и 3D-модели до конструкторской документации и файлов, готовых к передаче на производство.</p></div>
+    <div class="grid-skills">
+      <div class="skill"><h4><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg> Образование</h4><p>Алтайский государственный технический университет им. И.И. Ползунова. Специальность: «Эксплуатация транспортно-технологических машин и комплексов» — инженер.</p></div>
+      <div class="skill"><h4><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Опыт</h4><p>Более 8 лет работы по профессии «инженер-конструктор». Проектирование изделий простых и сложных по конструктиву, выпуск документации по ГОСТ и ЕСКД.</p></div>
+      <div class="skill"><h4><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> Подход</h4><p>Работа по эскизу и ТЗ заказчика, выезд на объекты для образмеривания и эскизирования, предоставление расчётных данных по изделию при необходимости.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">Компетенции</span><h2>Что я делаю</h2></div>
+    <div class="grid-skills" id="skills-grid"></div>
+    <div class="tools" id="tools"></div>
+  </div>
+</section>
+
+<section id="projects" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">Портфолио</span><h2>Проекты и конструкторская документация</h2>
+      <p>26 выполненных проектов: элементы городского благоустройства, оборудование для пищевой промышленности, станкостроение и специальные конструкции. Нажмите на карточку, чтобы открыть чертежи.</p></div>
+    <div class="filters" id="filters"></div>
+    <div class="grid-proj" id="grid"></div>
+  </div>
+</section>
+
+<section id="contact" class="contact-sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">Контакты</span><h2>Обсудим ваш проект</h2><p>Готов взяться за проектирование изделия по вашему эскизу или техническому заданию.</p></div>
+    <div class="contact-grid">
+      <a class="cbox" href="tel:+79060813799"><div class="lbl">Телефон</div><div class="val">8 (906) 081-37-99</div></a>
+      <a class="cbox" href="mailto:sergeypetrov0205@mail.ru"><div class="lbl">Email</div><div class="val">sergeypetrov0205@mail.ru</div></a>
+      <a class="cbox" href="https://vk.com/sergeypetrov0205" target="_blank" rel="noopener"><div class="lbl">VK</div><div class="val">vk.com/sergeypetrov0205</div></a>
+      <div class="cbox"><div class="lbl">Локация</div><div class="val">Россия · удалённо / выезд на объект</div></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">© <span id="yr"></span> Петров Сергей Алексеевич · Инженер-конструктор · Портфолио</div></footer>
+
+<div class="lb" id="lb">
+  <div class="lb-top"><div class="lb-title"><h3 id="lb-name"></h3><p id="lb-code"></p></div><button class="lb-close" id="lb-close">&times;</button></div>
+  <button class="arrow prev" id="lb-prev">&#8249;</button>
+  <div class="lb-stage"><img id="lb-img" alt="Чертёж"></div>
+  <button class="arrow next" id="lb-next">&#8250;</button>
+  <div class="lb-nav"><button id="lb-prev2">&#8249;</button><div class="lb-count" id="lb-count"></div><button id="lb-next2">&#8250;</button></div>
+</div>
+
+<script>
+const DATA = {"projects": [{"id": 1, "name": "Контейнерная площадка «Бункер» на 2 контейнера", "code": "", "date": "03.10.2025", "category": "Благоустройство", "pages": "3–6", "sheets": 4, "images": ["assets/page_03.png", "assets/page_04.png", "assets/page_05.png", "assets/page_06.png"], "thumb": "assets/thumbs/page_03.jpg"}, {"id": 2, "name": "Скамейка «Солнце»", "code": "", "date": "15.12.2025", "category": "Благоустройство", "pages": "7–9", "sheets": 3, "images": ["assets/page_07.png", "assets/page_08.png", "assets/page_09.png"], "thumb": "assets/thumbs/page_07.jpg"}, {"id": 3, "name": "Скамейка «Неон»", "code": "", "date": "16.12.2025", "category": "Благоустройство", "pages": "10–12", "sheets": 3, "images": ["assets/page_10.png", "assets/page_11.png", "assets/page_12.png"], "thumb": "assets/thumbs/page_10.jpg"}, {"id": 4, "name": "Скамейка «Клио»", "code": "", "date": "12.11.2025", "category": "Благоустройство", "pages": "13–14", "sheets": 2, "images": ["assets/page_13.png", "assets/page_14.png"], "thumb": "assets/thumbs/page_13.jpg"}, {"id": 5, "name": "Скамейка «Школьная», Модуль 2", "code": "", "date": "20.11.2025", "category": "Благоустройство", "pages": "15–17", "sheets": 3, "images": ["assets/page_15.png", "assets/page_16.png", "assets/page_17.png"], "thumb": "assets/thumbs/page_15.jpg"}, {"id": 6, "name": "Кашпо DECO (Деко)", "code": "", "date": "11.10.2025", "category": "Благоустройство", "pages": "18–19", "sheets": 2, "images": ["assets/page_18.png", "assets/page_19.png"], "thumb": "assets/thumbs/page_18.jpg"}, {"id": 7, "name": "Урна «Город» металлическая, тройная (раздельный сбор)", "code": "", "date": "28.08.2025", "category": "Благоустройство", "pages": "20–23", "sheets": 4, "images": ["assets/page_20.png", "assets/page_21.png", "assets/page_22.png", "assets/page_23.png"], "thumb": "assets/thumbs/page_20.jpg"}, {"id": 8, "name": "Урна деревянная ЛГУД-23", "code": "ЛГУД-23", "date": "08.10.2025", "category": "Благоустройство", "pages": "24–27", "sheets": 4, "images": ["assets/page_24.png", "assets/page_25.png", "assets/page_26.png", "assets/page_27.png"], "thumb": "assets/thumbs/page_24.jpg"}, {"id": 9, "name": "Велопарковка «Оптима 8»", "code": "", "date": "11.11.2025", "category": "Благоустройство", "pages": "28–30", "sheets": 3, "images": ["assets/page_28.png", "assets/page_29.png", "assets/page_30.png"], "thumb": "assets/thumbs/page_28.jpg"}, {"id": 10, "name": "Ограждение вентиляционной шахты", "code": "9.10.25.00", "date": "09.10.2025", "category": "Благоустройство", "pages": "31–32", "sheets": 2, "images": ["assets/page_31.png", "assets/page_32.png"], "thumb": "assets/thumbs/page_31.jpg"}, {"id": 11, "name": "Качели «Оазис»", "code": "14049.01.00000-03", "date": "", "category": "Благоустройство", "pages": "33–35", "sheets": 3, "images": ["assets/page_33.png", "assets/page_34.png", "assets/page_35.png"], "thumb": "assets/thumbs/page_33.jpg"}, {"id": 12, "name": "Экран радиатора 510×1820", "code": "35.12.25-01", "date": "", "category": "Благоустройство", "pages": "36–37", "sheets": 2, "images": ["assets/page_36.png", "assets/page_37.png"], "thumb": "assets/thumbs/page_36.jpg"}, {"id": 13, "name": "Входная группа ВХ2", "code": "32.12.25-02", "date": "", "category": "Благоустройство", "pages": "38–43", "sheets": 6, "images": ["assets/page_38.png", "assets/page_39.png", "assets/page_40.png", "assets/page_41.png", "assets/page_42.png", "assets/page_43.png"], "thumb": "assets/thumbs/page_38.jpg"}, {"id": 14, "name": "Мобильная сыроварня", "code": "МСЭБ-100.01", "date": "", "category": "Оборудование", "pages": "44–48", "sheets": 5, "images": ["assets/page_44.png", "assets/page_45.png", "assets/page_46.png", "assets/page_47.png", "assets/page_48.png"], "thumb": "assets/thumbs/page_44.jpg"}, {"id": 15, "name": "Резервуар ОСВ-2,5", "code": "ОСВ-2,5.01", "date": "", "category": "Оборудование", "pages": "49–51", "sheets": 3, "images": ["assets/page_49.png", "assets/page_50.png", "assets/page_51.png"], "thumb": "assets/thumbs/page_49.jpg"}, {"id": 16, "name": "Плавитель (Жиротопка)", "code": "РЖ-1000", "date": "", "category": "Оборудование", "pages": "52", "sheets": 1, "images": ["assets/page_52.png"], "thumb": "assets/thumbs/page_52.jpg"}, {"id": 17, "name": "Тележка технологическая с наклоном", "code": "ПТ-200.01", "date": "", "category": "Оборудование", "pages": "53–54", "sheets": 2, "images": ["assets/page_53.png", "assets/page_54.png"], "thumb": "assets/thumbs/page_53.jpg"}, {"id": 18, "name": "Блочная котельная ПКН-2М", "code": "БК-05.00.00.00", "date": "", "category": "Оборудование", "pages": "55–58", "sheets": 4, "images": ["assets/page_55.png", "assets/page_56.png", "assets/page_57.png", "assets/page_58.png"], "thumb": "assets/thumbs/page_55.jpg"}, {"id": 19, "name": "Телескопические защиты для станков, серия ТЗН", "code": "W200H", "date": "", "category": "Машиностроение", "pages": "59–61", "sheets": 3, "images": ["assets/page_59.png", "assets/page_60.png", "assets/page_61.png"], "thumb": "assets/thumbs/page_59.jpg"}, {"id": 20, "name": "Транспортёр уборки стружки с баком СОЖ", "code": "СА029.00.00.000", "date": "", "category": "Машиностроение", "pages": "62–64", "sheets": 3, "images": ["assets/page_62.png", "assets/page_63.png", "assets/page_64.png"], "thumb": "assets/thumbs/page_62.jpg"}, {"id": 21, "name": "Укрытие бурильщика", "code": "УБМ.124.02.000-V2", "date": "", "category": "Машиностроение", "pages": "65–70", "sheets": 6, "images": ["assets/page_65.png", "assets/page_66.png", "assets/page_67.png", "assets/page_68.png", "assets/page_69.png", "assets/page_70.png"], "thumb": "assets/thumbs/page_65.jpg"}, {"id": 22, "name": "Ворота противопожарные герметичные", "code": "В 01.00.000", "date": "", "category": "Машиностроение", "pages": "71–76", "sheets": 6, "images": ["assets/page_71.png", "assets/page_72.png", "assets/page_73.png", "assets/page_74.png", "assets/page_75.png", "assets/page_76.png"], "thumb": "assets/thumbs/page_71.jpg"}, {"id": 23, "name": "Бункер", "code": "1Л1000-01.01.20.000", "date": "", "category": "Машиностроение", "pages": "77–82", "sheets": 6, "images": ["assets/page_77.png", "assets/page_78.png", "assets/page_79.png", "assets/page_80.png", "assets/page_81.png", "assets/page_82.png"], "thumb": "assets/thumbs/page_77.jpg"}, {"id": 24, "name": "Ёмкость в сборе", "code": "АСА-1П-002.000", "date": "", "category": "Машиностроение", "pages": "83–88", "sheets": 6, "images": ["assets/page_83.png", "assets/page_84.png", "assets/page_85.png", "assets/page_86.png", "assets/page_87.png", "assets/page_88.png"], "thumb": "assets/thumbs/page_83.jpg"}, {"id": 25, "name": "Инструмент в сборе", "code": "Ин-02.00", "date": "", "category": "Машиностроение", "pages": "89–91", "sheets": 3, "images": ["assets/page_89.png", "assets/page_90.png", "assets/page_91.png"], "thumb": "assets/thumbs/page_89.jpg"}, {"id": 26, "name": "Закупочная ведомость: Контейнерная площадка «Бункер» на 5 контейнеров", "code": "61.04.26", "date": "", "category": "Документация", "pages": "92", "sheets": 1, "images": ["assets/page_92.png"], "thumb": "assets/thumbs/page_92.jpg"}], "skills": [["3D-проектирование изделий", "Разработка простых и сложных конструкций в 3D: КОМПАС-3D (основной), SolidWorks, AutoCAD."], ["Полный пакет чертежей", "Оформление конструкторской документации строго по ГОСТ и ЕСКД."], ["Техническая документация", "Составление спецификаций, ведомостей и пояснительной документации на изделия."], ["2D → 3D реверс", "Перевод плоских чертежей в параметрические трёхмерные модели."], ["Подготовка к производству", "Файлы для лазерной резки (DXF), гибки (чертежи), трубореза (IGS)."], ["Оптимальная раскладка", "Экономная раскладка деталей на листах для лазерной резки."], ["Расчётные данные", "Предоставление расчётов по изделию по необходимости."], ["Работа на объекте", "Выезд на объекты для образмеривания и эскизирования изделий."]], "software": ["КОМПАС-3D", "SolidWorks", "AutoCAD", "DXF / IGS", "ГОСТ", "ЕСКД"]};
+const EAGER = (location.hash||"").indexOf("print")>=0;
+const CATS = [
+  {id:"all", label:"Все проекты"},
+  {id:"Благоустройство", label:"Благоустройство"},
+  {id:"Оборудование", label:"Оборудование"},
+  {id:"Машиностроение", label:"Машиностроение"},
+  {id:"Документация", label:"Документация"},
+];
+const $ = s=>document.querySelector(s);
+$("#yr").textContent = new Date().getFullYear();
+$("#st-proj").textContent = DATA.projects.length;
+$("#st-sheets").textContent = DATA.projects.reduce((a,p)=>a+p.sheets,0);
+$("#skills-grid").innerHTML = DATA.skills.map((s,i)=>`
+  <div class="skill"><span class="n">${String(i+1).padStart(2,"0")}</span>
+    <h4><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>${s[0]}</h4>
+    <p>${s[1]}</p></div>`).join("");
+$("#tools").innerHTML = DATA.software.map(t=>`<span class="chip">${t}</span>`).join("");
+let active = "all";
+function renderFilters(){
+  $("#filters").innerHTML = CATS.map(c=>{
+    const n = c.id==="all" ? DATA.projects.length : DATA.projects.filter(p=>p.category===c.id).length;
+    return `<button class="fbtn ${active===c.id?"active":""}" data-cat="${c.id}">${c.label}<span class="cnt">${n}</span></button>`;
+  }).join("");
+  document.querySelectorAll(".fbtn").forEach(b=>b.onclick=()=>{active=b.dataset.cat;renderFilters();renderGrid();});
+}
+function renderGrid(){
+  const list = DATA.projects.filter(p=>active==="all"||p.category===active);
+  $("#grid").innerHTML = list.map(p=>{
+    const cover = p.thumb || p.images[0] || "";
+    const tags = [];
+    if(p.code) tags.push(`<span class="tag code">${p.code}</span>`);
+    if(p.date) tags.push(`<span class="tag">${p.date}</span>`);
+    tags.push(`<span class="tag">стр. ${p.pages}</span>`);
+    return `<article class="card" data-id="${p.id}">
+      <div class="thumb"><img loading="${EAGER?'eager':'lazy'}" src="${cover}" alt="${p.name}">
+        <span class="badge">${p.category}</span>
+        <span class="sheets"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>${p.sheets}</span></div>
+      <div class="card-body"><h3>${p.name}</h3><div class="meta">${tags.join("")}</div></div>
+    </article>`;
+  }).join("");
+  document.querySelectorAll(".card").forEach(c=>c.onclick=()=>openLB(+c.dataset.id));
+}
+let cur=null, idx=0;
+function openLB(id){cur=DATA.projects.find(p=>p.id===id);idx=0;$("#lb").classList.add("open");document.body.style.overflow="hidden";showSlide();}
+function showSlide(){if(!cur)return;$("#lb-img").src=cur.images[idx];$("#lb-name").textContent=cur.name;$("#lb-code").textContent=[cur.code,cur.date].filter(Boolean).join("  ·  ");$("#lb-count").textContent=`${idx+1} / ${cur.images.length}`;}
+function closeLB(){$("#lb").classList.remove("open");document.body.style.overflow="";cur=null;}
+function nav(d){if(!cur)return;idx=(idx+d+cur.images.length)%cur.images.length;showSlide();}
+$("#lb-close").onclick=closeLB;$("#lb-prev").onclick=()=>nav(-1);$("#lb-next").onclick=()=>nav(1);$("#lb-prev2").onclick=()=>nav(-1);$("#lb-next2").onclick=()=>nav(1);
+$("#lb").onclick=e=>{if(e.target.id==="lb")closeLB();};
+document.addEventListener("keydown",e=>{if(!$("#lb").classList.contains("open"))return;if(e.key==="Escape")closeLB();if(e.key==="ArrowLeft")nav(-1);if(e.key==="ArrowRight")nav(1);});
+renderFilters(); renderGrid();
+</script>
+</body>
+</html>
