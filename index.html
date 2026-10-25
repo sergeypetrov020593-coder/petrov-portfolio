@@ -359,7 +359,7 @@ function buildBook(){
   var foot=function(n){return '<div class="pb-foot"><span>Петров С.А. · Инженер-конструктор · Портфолио</span><span>стр. '+n+' из '+all+'</span></div>';};
   DATA.projects.forEach(function(p,i){
     var start=pg, end=pg+p.images.length-1;
-    rows+='<div class="pb-row"><span class="n">'+(i+1)+'.</span><span class="nm">'+pbEsc(p.name)+(p.code?'<span class="rg">'+pbEsc(p.code)+'</span>':'')+'</span><span class="dots"></span><span class="pg">'+(start===end?start:start+'–'+end)+'</span></div>';
+    rows+='<div class="pb-row"><span class="n">'+(i+1)+'.</span><span class="nm">'+pbEsc(p.name.replace(" ЛГУД-23",""))+'</span><span class="dots"></span><span class="pg">'+(start===end?start:start+'–'+end)+'</span></div>';
     p.images.forEach(function(src,k){
       sheets+='<div class="pb-page pb-sheet"><div class="pb-head"><span>'+(i+1)+'. '+pbEsc(p.name)+'</span><span>Лист '+(k+1)+' из '+p.images.length+'</span></div><div class="pb-img"><img src="'+src+'" alt=""></div>'+foot(pg)+'</div>';
       pg++;
