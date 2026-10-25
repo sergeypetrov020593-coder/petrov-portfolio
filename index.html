@@ -118,29 +118,38 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   header,.cta,.filters,.lb,.arrow,.menu,.badge,.sheets{display:none!important}
   *{box-shadow:none!important;text-shadow:none!important}
 
-  /* Единая схема: белый фон + чёрный текст везде */
+  /* Глобальный сброс: белый фон */
   body,html{background:#fff!important;color:#000!important}
+
+  /* ВСЕ текстовые элементы → чёрный */
+  h1,h2,h3,h4,p,span,a,b,strong,li,label,small,figcaption,
+  .lead,.kicker,.role,.brand,.stat b,.stat span,
+  .skill h4,.skill p,.skill .n,
+  .cbox .lbl,.cbox .val,
+  .card-body h3,.meta .tag,.tag,.tag.code,
+  .avatar-card h3,.avatar-card p,
+  .chip,.fbtn,.btn,.btn-primary,.btn-ghost,
+  .contact-list a,.contact-list span,
+  footer,footer div{
+    color:#000!important}
+
+  /* Все фоны → белые */
   .hero,.hero-in,section,.wrap,.sec-head,.contact-sec,footer,
-  .stat,.skill,.cbox,.avatar-card,.card,.card-body,.chip,.fbtn,.tag,
-  .thumb,.tools,.grid-skills,.grid-proj,.contact-grid,.meta,
-  [class*="panel"],h1,h2,h3,h4,p,span,a,b,strong,li,div{
-    background:#fff!important;color:#000!important;
-    border-color:#000!important}
+  .stat,.skill,.cbox,.avatar-card,.card,.card-body,
+  .chip,.fbtn,.tag,.thumb,.tools,.grid-skills,.grid-proj,
+  .contact-grid,.meta,.btn,.btn-primary,.btn-ghost,
+  [class*="panel"]{
+    background:#fff!important;border-color:#333!important}
 
-  /* Жирный текст для заголовков и акцентов */
-  h1,h2,h3,h4,.stat b,.skill h4,.cbox .val,.card-body h3,
-  .kicker,.role,.brand{font-weight:800!important;color:#000!important}
-  .skill p,.stat span,.cbox .lbl,.lead,.tag,.meta .tag,
-  .avatar-card p,.avatar-card h3{color:#222!important}
-
-  /* Рамки для визуального разделения блоков */
-  .stat,.skill,.cbox,.card,.avatar-card{border:1.5px solid #000!important;border-radius:6px!important}
-  .thumb{border:1px solid #000!important;background:#fff!important}
+  /* Рамки для разделения блоков */
+  .stat,.skill,.cbox,.card,.avatar-card{
+    border:1.5px solid #333!important;border-radius:6px!important}
+  .thumb{border:1px solid #333!important;background:#fff!important}
   .thumb img{background:#fff!important}
-  .avatar{border:2px solid #000!important;background:#fff!important}
+  .avatar{border:2px solid #333!important;background:#fff!important}
   .avatar img{background:#fff!important}
   .chip,.fbtn,.btn,.btn-primary,.btn-ghost{
-    border:1px solid #000!important;background:#fff!important;color:#000!important}
+    border:1px solid #333!important;background:#fff!important;color:#000!important}
 
   /* Сетка и отступы */
   section{padding:12px 0;page-break-inside:avoid}
