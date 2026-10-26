@@ -401,6 +401,34 @@
         "assets/page_92.png"
       ],
       "thumb": "assets/thumbs/page_92.jpg"
+    },
+    {
+      "id": 27,
+      "name": "Теплообменник AW-100",
+      "code": "E8-004-AW100.000",
+      "date": "",
+      "category": "Оборудование",
+      "pages": "93–95",
+      "sheets": 3,
+      "images": [
+        "assets/page_93.png",
+        "assets/page_94.png",
+        "assets/page_95.png"
+      ],
+      "thumb": "assets/thumbs/page_93.jpg"
+    },
+    {
+      "id": 28,
+      "name": "Блочный тепловой пункт БТП-Е8-IHS-200",
+      "code": "БТП-Е8-IHS-200 ГЧ",
+      "date": "",
+      "category": "Оборудование",
+      "pages": "96",
+      "sheets": 1,
+      "images": [
+        "assets/page_96.png"
+      ],
+      "thumb": "assets/thumbs/page_96.jpg"
     }
   ],
   "skills": [
