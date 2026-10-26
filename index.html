@@ -304,6 +304,8 @@ $("#lb").onclick=e=>{if(e.target.id==="lb")closeLB();};
 document.addEventListener("keydown",e=>{if(!$("#lb").classList.contains("open"))return;if(e.key==="Escape")closeLB();if(e.key==="ArrowLeft")nav(-1);if(e.key==="ArrowRight")nav(1);});
 // Печать: сначала догружаем все миниатюры сетки, затем открываем диалог печати
 function printPage(){
+  var bc=document.getElementById('book-css');if(bc)bc.remove();
+  var pb=document.getElementById('print-book');if(pb)pb.remove();
   const imgs=Array.from(document.querySelectorAll('#grid img'));
   const pendingImgs=imgs.filter(i=>!i.complete);
   if(!pendingImgs.length){ window.print(); return; }
@@ -353,7 +355,8 @@ var BOOK_CSS=`
 }`;
 function buildBook(){
   var old=document.getElementById('print-book');if(old)old.remove();
-  if(!document.getElementById('book-css')){var st=document.createElement('style');st.id='book-css';st.textContent=BOOK_CSS;document.head.appendChild(st);}
+  var oc=document.getElementById('book-css');if(oc)oc.remove();
+  var st=document.createElement('style');st.id='book-css';st.textContent=BOOK_CSS;document.head.appendChild(st);
   var total=0;DATA.projects.forEach(function(p){total+=p.images.length;});
   var all=total+2, pg=3, rows='', sheets='';
   var foot=function(n){return '<div class="pb-foot"><span>Петров С.А. · Инженер-конструктор · Портфолио</span><span>стр. '+n+' из '+all+'</span></div>';};
@@ -386,7 +389,7 @@ function printProjects(){
   buildBook().then(function(){
     setTimeout(function(){
       window.print();
-      setTimeout(function(){var b=document.getElementById('print-book');if(b)b.remove();},500);
+      setTimeout(function(){var b=document.getElementById('print-book');if(b)b.remove();var c=document.getElementById('book-css');if(c)c.remove();},500);
     },150);
   });
 }
