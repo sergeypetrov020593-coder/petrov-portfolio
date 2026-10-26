@@ -436,10 +436,12 @@
       "code": "34.08.26",
       "date": "",
       "category": "Благоустройство",
-      "pages": "97",
-      "sheets": 1,
+      "pages": "97–99",
+      "sheets": 3,
       "images": [
-        "assets/page_97.png"
+        "assets/page_97.png",
+        "assets/page_98.png",
+        "assets/page_99.png"
       ],
       "thumb": "assets/thumbs/page_97.jpg"
     },
@@ -449,10 +451,12 @@
       "code": "34.08.26-01",
       "date": "",
       "category": "Благоустройство",
-      "pages": "98",
-      "sheets": 1,
+      "pages": "100–102",
+      "sheets": 3,
       "images": [
-        "assets/page_98.png"
+        "assets/page_100.png",
+        "assets/page_101.png",
+        "assets/page_102.png"
       ],
       "thumb": "assets/thumbs/page_98.jpg"
     },
@@ -462,10 +466,12 @@
       "code": "34.08.26-02",
       "date": "",
       "category": "Благоустройство",
-      "pages": "99",
-      "sheets": 1,
+      "pages": "103–105",
+      "sheets": 3,
       "images": [
-        "assets/page_99.png"
+        "assets/page_103.png",
+        "assets/page_104.png",
+        "assets/page_105.png"
       ],
       "thumb": "assets/thumbs/page_99.jpg"
     },
@@ -475,10 +481,12 @@
       "code": "34.08.26-03",
       "date": "",
       "category": "Благоустройство",
-      "pages": "100",
-      "sheets": 1,
+      "pages": "106–108",
+      "sheets": 3,
       "images": [
-        "assets/page_100.png"
+        "assets/page_106.png",
+        "assets/page_107.png",
+        "assets/page_108.png"
       ],
       "thumb": "assets/thumbs/page_100.jpg"
     },
@@ -488,10 +496,12 @@
       "code": "34.08.26-04",
       "date": "",
       "category": "Благоустройство",
-      "pages": "101",
-      "sheets": 1,
+      "pages": "109–111",
+      "sheets": 3,
       "images": [
-        "assets/page_101.png"
+        "assets/page_109.png",
+        "assets/page_110.png",
+        "assets/page_111.png"
       ],
       "thumb": "assets/thumbs/page_101.jpg"
     },
@@ -501,10 +511,12 @@
       "code": "34.08.26-05",
       "date": "",
       "category": "Благоустройство",
-      "pages": "102",
-      "sheets": 1,
+      "pages": "112–114",
+      "sheets": 3,
       "images": [
-        "assets/page_102.png"
+        "assets/page_112.png",
+        "assets/page_113.png",
+        "assets/page_114.png"
       ],
       "thumb": "assets/thumbs/page_102.jpg"
     }
