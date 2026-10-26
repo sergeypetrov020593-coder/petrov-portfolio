@@ -438,20 +438,20 @@
     ]
   ],
   "software": [
+    "Работаю с ИИ",
     "КОМПАС-3D",
     "SolidWorks",
     "AutoCAD",
-    "DXF / IGS",
-    "ГОСТ",
-    "ЕСКД",
-    "Работаю с ИИ",
-    "CRM",
-    "Word",
+    "ArtCAM",
+    "ProNest",
+    "Contact ЧПУ",
     "Excel",
+    "Word",
     "PowerPoint",
     "PDF",
-    "ArtCAM",
-    "Contact ЧПУ",
-    "ProNest"
+    "CRM",
+    "DXF / IGS",
+    "ГОСТ",
+    "ЕСКД"
   ]
 }
