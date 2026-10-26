@@ -458,7 +458,7 @@
         "assets/page_101.png",
         "assets/page_102.png"
       ],
-      "thumb": "assets/thumbs/page_102.jpg"
+      "thumb": "assets/thumbs/page_100.jpg"
     },
     {
       "id": 31,
@@ -473,7 +473,7 @@
         "assets/page_104.png",
         "assets/page_105.png"
       ],
-      "thumb": "assets/thumbs/page_105.jpg"
+      "thumb": "assets/thumbs/page_103.jpg"
     },
     {
       "id": 32,
@@ -488,7 +488,7 @@
         "assets/page_107.png",
         "assets/page_108.png"
       ],
-      "thumb": "assets/thumbs/page_108.jpg"
+      "thumb": "assets/thumbs/page_106.jpg"
     },
     {
       "id": 33,
@@ -503,7 +503,7 @@
         "assets/page_110.png",
         "assets/page_111.png"
       ],
-      "thumb": "assets/thumbs/page_111.jpg"
+      "thumb": "assets/thumbs/page_109.jpg"
     },
     {
       "id": 34,
@@ -518,7 +518,7 @@
         "assets/page_113.png",
         "assets/page_114.png"
       ],
-      "thumb": "assets/thumbs/page_114.jpg"
+      "thumb": "assets/thumbs/page_112.jpg"
     }
   ],
   "skills": [
