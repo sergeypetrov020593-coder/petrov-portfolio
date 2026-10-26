@@ -429,6 +429,84 @@
         "assets/page_96.png"
       ],
       "thumb": "assets/thumbs/page_96.jpg"
+    },
+    {
+      "id": 29,
+      "name": "Контейнерная площадка «МАФ-6 PRO MAX» на 1 контейнер",
+      "code": "34.08.26",
+      "date": "",
+      "category": "Благоустройство",
+      "pages": "97",
+      "sheets": 1,
+      "images": [
+        "assets/page_97.png"
+      ],
+      "thumb": "assets/thumbs/page_97.jpg"
+    },
+    {
+      "id": 30,
+      "name": "Контейнерная площадка «МАФ-6 PRO MAX» на 2 контейнера",
+      "code": "34.08.26-01",
+      "date": "",
+      "category": "Благоустройство",
+      "pages": "98",
+      "sheets": 1,
+      "images": [
+        "assets/page_98.png"
+      ],
+      "thumb": "assets/thumbs/page_98.jpg"
+    },
+    {
+      "id": 31,
+      "name": "Контейнерная площадка «МАФ-6 PRO MAX» на 3 контейнера",
+      "code": "34.08.26-02",
+      "date": "",
+      "category": "Благоустройство",
+      "pages": "99",
+      "sheets": 1,
+      "images": [
+        "assets/page_99.png"
+      ],
+      "thumb": "assets/thumbs/page_99.jpg"
+    },
+    {
+      "id": 32,
+      "name": "Контейнерная площадка «МАФ-6 PRO MAX» на 4 контейнера",
+      "code": "34.08.26-03",
+      "date": "",
+      "category": "Благоустройство",
+      "pages": "100",
+      "sheets": 1,
+      "images": [
+        "assets/page_100.png"
+      ],
+      "thumb": "assets/thumbs/page_100.jpg"
+    },
+    {
+      "id": 33,
+      "name": "Контейнерная площадка «МАФ-6 PRO MAX» на 5 контейнеров",
+      "code": "34.08.26-04",
+      "date": "",
+      "category": "Благоустройство",
+      "pages": "101",
+      "sheets": 1,
+      "images": [
+        "assets/page_101.png"
+      ],
+      "thumb": "assets/thumbs/page_101.jpg"
+    },
+    {
+      "id": 34,
+      "name": "Контейнерная площадка «МАФ-6 PRO MAX» на 6 контейнеров",
+      "code": "34.08.26-05",
+      "date": "",
+      "category": "Благоустройство",
+      "pages": "102",
+      "sheets": 1,
+      "images": [
+        "assets/page_102.png"
+      ],
+      "thumb": "assets/thumbs/page_102.jpg"
     }
   ],
   "skills": [
