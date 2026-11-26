@@ -1,6 +1,35 @@
 {
   "projects": [
     {
+      "id": 35,
+      "name": "Наружная эвакуационная лестница",
+      "code": "37.09.26",
+      "date": "",
+      "category": "Металлоконструкции",
+      "pages": "115–131",
+      "sheets": 17,
+      "images": [
+        "assets/page_115.png",
+        "assets/page_116.png",
+        "assets/page_117.png",
+        "assets/page_118.png",
+        "assets/page_119.png",
+        "assets/page_120.png",
+        "assets/page_121.png",
+        "assets/page_122.png",
+        "assets/page_123.png",
+        "assets/page_124.png",
+        "assets/page_125.png",
+        "assets/page_126.png",
+        "assets/page_127.png",
+        "assets/page_128.png",
+        "assets/page_129.png",
+        "assets/page_130.png",
+        "assets/page_131.png"
+      ],
+      "thumb": "assets/thumbs/page_115.jpg"
+    },
+    {
       "id": 1,
       "name": "Контейнерная площадка «Бункер» на 2 контейнера",
       "code": "03.10.25",
